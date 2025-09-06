@@ -1,5 +1,7 @@
 # Board (Collaborative Whiteboard App)
 
+[Live Demo](https://board-js-seven.vercel.app/)
+
 Board is a real-time collaborative whiteboard application built with Next.js, Convex, Clerk, and Liveblocks. It allows users to create and join organizations, collaborate on boards, and draw or annotate together in real time. The app supports authentication, organization management, and a rich, interactive canvas for drawing and note-taking.
 
 ## Features
