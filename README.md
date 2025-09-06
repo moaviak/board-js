@@ -32,7 +32,7 @@ Board is a real-time collaborative whiteboard application built with Next.js, Co
 
 ```bash
 # Using git
- git clone <your-repo-url>
+ git clone https://github.com/moaviak/board-js.git
  cd board-nextjs
 ```
 
