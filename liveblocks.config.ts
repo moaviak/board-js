@@ -6,7 +6,7 @@ import {
 } from "@liveblocks/client";
 import { createRoomContext } from "@liveblocks/react";
 
-import { Layer } from "./types/canvas";
+import { Color, Layer } from "./types/canvas";
 
 // Define Liveblocks types for your application
 // https://liveblocks.io/docs/api-reference/liveblocks-react#Typing-your-data
@@ -17,6 +17,8 @@ declare global {
       // Example, real-time cursor coordinates
       cursor: { x: number; y: number } | null;
       selection: string[]; // Array of selected layer IDs
+      pencilDraft: [x: number, y: number, pressure: number][] | null;
+      penColor: Color | null;
     };
 
     // The Storage tree for the room, for useMutation, useStorage, etc.

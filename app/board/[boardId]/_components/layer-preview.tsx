@@ -3,12 +3,14 @@
 import { memo } from "react";
 import { useStorage } from "@liveblocks/react";
 
+import { colorToCSS } from "@/lib/utils";
 import { LayerType } from "@/types/canvas";
 
-import { Ellipse } from "./ellipse";
-import { Rectangle } from "./rectangle";
 import { Text } from "./text";
 import { Note } from "./note";
+import { Path } from "./path";
+import { Ellipse } from "./ellipse";
+import { Rectangle } from "./rectangle";
 
 interface LayerPreviewProps {
   id: string;
@@ -59,6 +61,18 @@ export const LayerPreview = memo(
             layer={layer}
             onPointerDown={onLayerPointerDown}
             selectionColor={selectionColor}
+          />
+        );
+      case LayerType.Path:
+        return (
+          <Path
+            key={id}
+            x={layer.x}
+            y={layer.y}
+            points={layer.points}
+            onPointerDown={(e) => onLayerPointerDown(e, id)}
+            fill={layer.fill ? colorToCSS(layer.fill) : "#000"}
+            stroke={selectionColor}
           />
         );
       default:
